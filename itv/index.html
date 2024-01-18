@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+</head>
+
+<body>
+	<header>
+		<div class="wrapper-header">
+			<div class="left-header">
+				<div class="img">
+					<img class="img-log" src="https://files.itv.uz/itv.png" alt="">
+				</div>
+				<div class="link">
+					<a href="">Televideniye</a>
+					<a href="">Televideniye</a>
+					<a href="">Televideniye</a>
+					<a href="">Televideniye</a>
+					<a href="">Televideniye</a>
+
+				</div>
+			</div>
+			<div class="right-header">
+				<form id="form">
+					<input type="text" id="search" class="search" placeholder="Search Movie">
+				</form>
+				<button class="lang">uz</button>
+				<button class="lang">uz</button>
+				<button class="lang">uz</button>
+				<button class="lang">uz</button>
+			</div>
+		</div>
+	</header>
+
+	<main class="main">
+		<!-- Swiper -->
+		<div class="swiper mySwiper">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="swiper-block-bg">
+						<div class="blog-bg-img">
+							<h1>Jell</h1>
+							<h4>Drama, 2017, 18+, AQSh</h4>
+							<div>
+								<button class="btn-bg">Ko'rish</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="swiper-block-bg-2">
+						<div class="blog-bg-img">
+							<h1>Jell</h1>
+							<h4>Drama, 2017, 18+, AQSh</h4>
+							<div>
+								<button class="btn-bg">Ko'rish</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="swiper-block-bg-3">
+						<div class="blog-bg-img">
+							<h1>Jell</h1>
+							<h4>Drama, 2017, 18+, AQSh</h4>
+							<div>
+								<button class="btn-bg">Ko'rish</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="swiper-block-bg-4">
+						<div class="blog-bg-img">
+							<h1>Jell</h1>
+							<h4>Drama, 2017, 18+, AQSh</h4>
+							<div>
+								<button class="btn-bg">Ko'rish</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">Slide 5</div>
+				<div class="swiper-slide">Slide 6</div>
+				<div class="swiper-slide">Slide 7</div>
+
+			</div>
+
+			<div class="swiper-pagination"></div>
+			<div class="autoplay-progress">
+				<svg viewBox="0 0 48 48">
+					<circle cx="24" cy="24" r="20"></circle>
+				</svg>
+				<span></span>
+			</div>
+		</div>
+	</main>
+
+	<main id="main"></main>
+
+	<!-- Swiper JS -->
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<!-- Initialize Swiper -->
+	<script>
+		const progressCircle = document.querySelector(".autoplay-progress svg");
+		const progressContent = document.querySelector(".autoplay-progress span");
+		var swiper = new Swiper(".mySwiper", {
+			spaceBetween: 30,
+			centeredSlides: true,
+			autoplay: {
+				delay: 10000,
+				disableOnInteraction: false
+			},
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true
+			},
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev"
+			},
+			on: {
+				autoplayTimeLeft(s, time, progress) {
+					progressCircle.style.setProperty("--progress", 1 - progress);
+					progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+				}
+			}
+		});
+	</script>
+	<script src="./script.js"></script>
+</body>
+
+</html>
